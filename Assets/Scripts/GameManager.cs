@@ -9,9 +9,9 @@ namespace Scripts
         public static bool selection = false;
 
         [SerializeField] SpriteRenderer m_MeshRenderer;
-        [SerializeField] List<GameObject> shapesPrefabs;
-        [SerializeField] List<GameObject> possibleShapes;
-        [SerializeField] List<GameObject> onScreen = new List<GameObject>();
+        [SerializeField] List<Shape> shapesPrefabs;
+        [SerializeField] List<Shape> possibleShapes;
+        [SerializeField] List<Shape> onScreen = new List<Shape>();
 
         public int shapesPerScreen;
 
@@ -41,19 +41,19 @@ namespace Scripts
             }
         }
 
-        private void AddToScreen(GameObject shape)
+        private void AddToScreen(Shape shape)
         {
             onScreen.Add(shape);
             possibleShapes.Remove(shape);
             shape.transform.position = MeshRendererBounds();
-            shape.SetActive(true);
+            shape.gameObject.SetActive(true);
         }
 
-        private void RemoveFromScreen(GameObject shape)
+        private void RemoveFromScreen(Shape shape)
         {
             possibleShapes.Add(shape);
             onScreen.Remove(shape);
-            shape.SetActive(false);
+            shape.gameObject.SetActive(false);
 
         }
 
@@ -65,11 +65,11 @@ namespace Scripts
 
         private void InitShapes()
         {
-            possibleShapes = new List<GameObject>();
+            possibleShapes = new List<Shape>();
             for (int i = 0; i < shapesPrefabs.Count; i++)
             {
-                GameObject newShape = Instantiate(shapesPrefabs[i]);
-                newShape.SetActive(false);
+                Shape newShape = Instantiate(shapesPrefabs[i]);
+                newShape.gameObject.SetActive(false);
                 possibleShapes.Add(newShape);
             }
         }
