@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Robot
   - 
   - 
   - 
@@ -38,15 +38,30 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 2618433723
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: FX
     uniqueID: 3191550017
     locked: 0
   - name: Shapes
     uniqueID: 1744131421
+    locked: 0
+  - name: Accessories
+    uniqueID: 3466923799
+    locked: 0
+  - name: BLOCK
+    uniqueID: 1664212511
+    locked: 0
+  - name: POOF
+    uniqueID: 2610416567
+    locked: 0
+  - name: ROBOT
+    uniqueID: 559004183
+    locked: 0
+  - name: EYESANDLEGS
+    uniqueID: 821824123
     locked: 0
