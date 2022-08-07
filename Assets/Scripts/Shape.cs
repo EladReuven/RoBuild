@@ -80,7 +80,7 @@ public class Shape : MonoBehaviour
 
         obj.transform.position += Vector3.back;
         GameManager.completedRobots.Add(obj);
-        obj.transform.localScale *= 1.5f;
+        obj.transform.localScale *= 1.2f;
         GameManager.currentRobot = obj;
         GameManager.startcoru = true;
         //GameManager.NoTouchyBlock.SetActive(true);

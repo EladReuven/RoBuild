@@ -18,14 +18,14 @@ public class TouchController : MonoBehaviour
         if(GameManager.firstSelected == null)
         {
             GameManager.firstSelected = GameManager.lastSelected;
+            GameManager.checkmark.transform.position = gameObject.transform.position;
+            GameManager.checkmark.SetActive(true);
         }
         else if (GameManager.firstSelected != this.gameObject.GetComponent<Shape>())
-        { 
+        {
+            GameManager.checkmark.SetActive(false);
             clickedShape.Combine(GameManager.firstSelected);
-            Debug.Log("here");
             GameManager.firstSelected = null;
-            Debug.Log(GameManager.firstSelected);
-            Debug.Log(GameManager.lastSelected);
         }
 
 
