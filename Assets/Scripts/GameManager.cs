@@ -140,7 +140,6 @@ public class GameManager : MonoBehaviour
         {
             shape.transform.position = Vector3.Lerp(shape.transform.position, targetLocation, 0.05f);
             yield return new WaitForSeconds(0.01f);
-            //yield return new WaitForEndOfFrame();
             Debug.Log(sec);
             sec -= Time.deltaTime;
         }
